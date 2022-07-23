@@ -30,15 +30,17 @@ mixin renderPostBlock(post)
 
 mixin renderPostFooter(post)
     div.pure-g.app-post-footer--box
-        div.pure-u-1.post-footer-updated
-            +icon("#calendar")
-            span Updated at #{post.updateDate}
-        div.pure-u-1
-            div.pure-g
-                +icon("#tag")
-                ul.pure-g.post-footer-tags
-                    each tag in post.tags
-                        li: a(href=tag.url,title=tag.name) #{tag.name}
+        if post.updateDate
+            div.pure-u-1.post-footer-updated
+                +icon("#calendar")
+                span Updated at #{post.updateDate}
+        if post.tags.length
+            div.pure-u-1
+                div.pure-g
+                    +icon("#tag")
+                    ul.pure-g.post-footer-tags
+                        each tag in post.tags
+                            li: a(href=tag.url,title=tag.name) #{tag.name}
         div.pure-u-1
             div.pure-g
                 +icon("#folder")

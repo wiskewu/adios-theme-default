@@ -17,11 +17,14 @@ mixin renderArticleItem(post)
             div.pure-g
                 div.pure-u-1
                     h3.article-item-title #{post.title}
-                p.pure-u-1.article-item-summary #{post.summary}
-        div.pure-u-1
-            ul.pure-g.article-item-tags
-                each tag in post.tags
-                    li: a(href=tag.url) #{tag.name}
+                p.pure-u-1.article-item-summary #{post.summary || ''}
+
+        if post.tags.length
+            div.pure-u-1
+                ul.pure-g.article-item-tags
+                    each tag in post.tags
+                        li: a(href=tag.url) #{tag.name}
+
         div.pure-u-1
             div.pure-g
                 div.pure-u-1.pure-u-md-1-2
