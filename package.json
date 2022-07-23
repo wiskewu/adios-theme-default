@@ -2,7 +2,7 @@
   "name": "@wiske/adios-theme-default",
   "version": "0.0.1",
   "description": "the default theme used in adios-blog-template",
-  "main": "theme",
+  "main": "theme/index.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/wiskewu/adios-theme-default.git"
