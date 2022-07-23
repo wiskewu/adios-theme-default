@@ -1,0 +1,38 @@
+extends ./mixins.pug
+
+//- render
+block rootpage
+    -
+        var sitename = siteinfo.name;
+        var title = sitename;
+        if (post && post.title) {
+            title = sitename + ' - ' + post.title;
+        } else if (pageTitle) {
+            title = pageTitle;
+        }
+
+    html(lang='zh')
+        head
+            title #{title}
+            meta(name='viewport', content='width=device-width, initial-scale=1')
+            include ../includes/seo.pug
+            include ../includes/purecss.pug
+            link(rel="stylesheet", href=utils.resolveRes('statics/css/theme.css'))
+            link(rel="stylesheet", href=utils.resolveRes('statics/css/layout.css'))
+            //- icons
+            link(rel="apple-touch-icon", sizes="180x180", href=utils.resolveRes('statics/icons/apple-touch-icon.png'))
+            link(rel="icon",type="image/png", sizes="32x32", href=utils.resolveRes('statics/icons/favicon-32x32.png'))
+            link(rel="icon",type="image/png", sizes="16x16", href=utils.resolveRes('statics/icons/favicon-16x16.png'))
+            link(rel="manifest", href=utils.resolveRes("statics/icons/site.webmanifest"))
+            block head
+        body.theme-light
+            div#app
+                div#app-container
+                    block app
+                        block apphead
+                            include ../includes/apphead.pug
+                        block appbody
+                        block appfoot
+                            include ../includes/appfoot.pug
+
+        script(src=utils.resolveRes("statics/js/main.js"))

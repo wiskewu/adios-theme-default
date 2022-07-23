@@ -1,0 +1,69 @@
+style.
+    .scroll-btn {
+        position: fixed;
+        display: none;
+        right: 3em;
+        bottom: 4.5em;
+        width: 28px;
+        height: 28px;
+        opacity: .5;
+        cursor: pointer;
+        z-index: 1;
+    }
+    .scroll-btn:hover {
+        opacity: 1;
+    }
+
+span.scroll-btn
+    +icon('#arrow-up', '28', '28', { width: '28px', height: '28px' })
+
+script.
+    function getBtn() {
+        var btns = document.getElementsByClassName('scroll-btn');
+        if (btns && btns.length) return btns[0];
+        return null;
+    }
+    function scrollTop(btn) {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+        btn.style.display = 'none';
+    }
+
+    function debouce(callback, ms) {
+        var t = null;
+        return function () {
+            var args = Array.prototype.slice.call(arguments);
+            var ctx = this;
+            if (t) {
+                clearTimeout(t);
+            }
+            t = setTimeout(function () {
+                    clearTimeout(t);
+                    t = null;
+                    callback.apply(ctx, args);
+                }, ms);
+        }
+    }
+
+    //- place here for dom ready
+    ~(function () {
+        function setStyle() {
+            var btn = getBtn();
+            var sH = window.scrollY;
+            if (btn) {
+                btn.style.display = sH > 100 ? 'inline' : 'none';
+            }
+            return btn;
+        }
+
+        var btn = setStyle();
+        if (btn) {
+            btn.addEventListener('click', function () {
+                scrollTop(this);
+            });
+            window.onscroll = debouce(setStyle, 500);
+        }
+        btns = null;
+    })();

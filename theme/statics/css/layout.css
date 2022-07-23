@@ -1,0 +1,123 @@
+#app {
+    -webkit-font-smoothing: antialiased;
+    background-color: var(--bg);
+    color: var(--color);
+}
+/* ===== overwrite purecss ===== */
+#app .pure-g {
+    letter-spacing: normal;
+}
+#app .pure-button-group {
+    letter-spacing: normal;
+}
+/* ===== reset ===== */
+ul {
+    margin: 0;
+    padding: 0;
+}
+li {
+    list-style: none;
+}
+a {
+    color: var(--color);
+}
+a:focus,
+a:hover,
+a:active {
+    color: var(--color-secondary);
+}
+a:hover {
+    text-decoration: none;
+}
+
+/* ===== variables ===== */
+
+#app-container {
+    max-width: 50em;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 1.2em;
+}
+
+/* ===== common utils ====== */
+.hidden {
+  display: none;
+}
+.icon {
+    width: 16px;
+    height: 16px;
+    vertical-align: middle;
+    fill: currentColor;
+    overflow: hidden;
+    cursor: pointer;
+}
+/* just for js usage */
+.theme-btn {}
+
+/* ===== header ===== */
+#app-container header.app-header {
+    min-height: 15vh;
+}
+#app-container header.app-header h1.app-header-title a {
+    text-decoration: none;
+}
+
+#app-container header ul.app-header-nav-list {
+    justify-content: flex-end;
+    align-items: center;
+}
+#app-container header ul.app-header-nav-list li {
+    margin-left: 0.75em;
+}
+#app-container header ul.app-header-nav-list li:hover {
+    color: var(--color-secondary);
+}
+#app-container header ul.app-header-nav-list li a.link-active {
+    color: var(--color-secondary);
+    text-decoration: none;
+    position: relative;
+}
+#app-container header ul.app-header-nav-list li a.link-active::before,
+#app-container header ul.app-header-nav-list li a.link-active::after {
+    content: '';
+    position: absolute;
+    display: inline-block;
+    background-color: brown;
+}
+#app-container header ul.app-header-nav-list li a.link-active::before {
+    width: 50%;
+    height: .15em;
+    right: -0.25em;
+    bottom: -0.25em;
+}
+#app-container header ul.app-header-nav-list li a.link-active::after {
+    height: 50%;
+    width: .15em;
+    right: -0.25em;
+    bottom: -0.25em;
+}
+
+/* ===== body ====== */
+#app-container main.app-body {
+    min-height: 75vh;
+}
+/* ===== footer ===== */
+#app-container footer.app-footer {
+    min-height: 10vh;
+    font-size: 75%;
+    opacity: .45;
+    border-top: 1px solid var(--color-secondary);
+    color: var(--color-secondary)
+}
+#app-container footer.app-footer > div {
+    padding: 2em 0;   
+}
+#app-container footer.app-footer .share-license {
+    margin-right: 1em;
+}
+#app-container footer.app-footer .copyright {
+    margin-right: 1em;
+}
+#app-container footer.app-footer .last-update {
+    margin-top: .5em;
+}

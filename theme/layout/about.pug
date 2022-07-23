@@ -1,0 +1,14 @@
+extends ./extends/layout.pug
+
+append apphead 
+    include ./includes/highlightcss.pug
+    style.
+        .app-about {
+            margin-top: 2em;
+        }
+
+block appbody
+    main.app-body
+        article.markdown.app-about !{post.html}
+
+append appfoot 

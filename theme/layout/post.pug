@@ -1,0 +1,68 @@
+extends ./extends/layout.pug
+
+mixin renderHeadBlock(post)
+    header.app-post-header.pure-g
+        div.pure-u-1
+            div.pure-g.app-post-header--box
+                h1.pure-u-1.post-header-title #{post.title}
+                div.pure-u-1.post-header-info
+                    p.post-header-info--created
+                        +icon("#calendar")
+                        span #{post.createDate}
+                    span.post-header-info--divider ·
+                    p.post-header-info--author
+                        +icon("#pencil-alt")
+                        span #{post.author}
+
+
+mixin renderNavigation()
+    div.pure-g.app-post-navigation
+        span('click'='toggleTheme()')
+            a(href=siteinfo.homepage)
+                +icon("#home", "24", "24", { width: "24px", height: "24px" })
+        span.theme-btn(onclick='toggleTheme(this)')
+            +icon("#sun", "24", "24", { width: "24px", height: "24px" })
+
+mixin renderPostBlock(post)
+    section.app-post-body
+        article.markdown.app-post-body-content !{post.html}
+
+
+mixin renderPostFooter(post)
+    div.pure-g.app-post-footer--box
+        div.pure-u-1.post-footer-updated
+            +icon("#calendar")
+            span Updated at #{post.updateDate}
+        div.pure-u-1
+            div.pure-g
+                +icon("#tag")
+                ul.pure-g.post-footer-tags
+                    each tag in post.tags
+                        li: a(href=tag.url,title=tag.name) #{tag.name}
+        div.pure-u-1
+            div.pure-g
+                +icon("#folder")
+                ul.pure-g.post-footer-categories
+                    each category in post.categories
+                        li: a(href=category.url,title=category.name) #{category.name}
+
+//- render
+block append head
+    include ./includes/highlightcss.pug
+    link(rel="stylesheet", href=utils.resolveRes("statics/css/post.css"))
+
+block apphead
+    +renderHeadBlock(post)
+    +renderNavigation()
+    hr
+
+block appbody
+    main.app-body
+        +renderPostBlock(post)
+
+    section.app-post-footer
+        +renderPostFooter(post)
+
+    include ./includes/backtop.pug
+
+block append appfoot

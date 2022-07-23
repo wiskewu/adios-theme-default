@@ -1,0 +1,17 @@
+extends ./extends/layout.pug
+
+//- render
+block append head
+    style: include ./inlinestyles/tags.css
+
+block append apphead
+
+block append appbody 
+    main.app-body
+        h2 所有标签
+        ul.pure-g.app-tags
+            each tag in tags
+                li.app-tags-item
+                    a(href=tag.indexUrl, title=tag.name) #{tag.name} - #{tag.total}
+
+block append appfoot 

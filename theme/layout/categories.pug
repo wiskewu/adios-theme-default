@@ -1,0 +1,18 @@
+extends ./extends/layout.pug
+
+//- render
+block append head
+    style: include ./inlinestyles/categories.css
+
+block append apphead
+
+block append appbody
+
+    main.app-body
+        h2 所有分类
+        ul.pure-g.app-categories
+            each category in categories
+                li.app-categories-item
+                    a(href=category.indexUrl, title=category.name) #{category.name} - #{category.total}
+
+block append appfoot 

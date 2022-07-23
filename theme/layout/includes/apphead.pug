@@ -1,0 +1,25 @@
+header.pure-g.app-header
+    div.pure-u-1
+        h1.app-header-title: a(href=siteinfo.homepage || '/') #{siteinfo.name}
+        ul.pure-g.app-header-nav-list
+            each nav in navList
+                li.app-header-nav-list-item: a(href=nav.url, title=nav.title, data-url=nav.url, class="") #{nav.title}
+
+            li.app-header-nav-list-btn
+               span.theme-btn(onclick='toggleTheme(this)'): +icon('#sun', '24', '24', { width: '24px', height: '24px' })
+
+
+script.
+    (function () {
+        var navLinkEls = document.querySelectorAll('.app-header-nav-list a');
+        var href = location.href;
+        var pathname = location.pathname;
+        if (navLinkEls && navLinkEls.length) {
+            navLinkEls.forEach((aEl) => {
+                var url = aEl.dataset.url;
+                if (url === href || url === pathname) {
+                    aEl.classList.add('link-active');
+                }
+            });
+        }
+    })();

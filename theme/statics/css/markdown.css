@@ -1,0 +1,140 @@
+/** overwrite for highlight.js */
+
+/* markdown-namespace */
+article.markdown {
+
+}
+/* reset to browser default style */
+article.markdown ul,
+article.markdown ol {
+    margin: initial;
+    /* if supports */
+    margin: revert;
+    padding: initial;
+    padding: revert;
+}
+article.markdown ul li,
+article.markdown ol li {
+    list-style-type: initial;
+    list-style-type: revert;
+}
+
+article.markdown a:not(.header-anchor) {
+    color: var(--link-color);
+}
+article.markdown a:not(.header-anchor):hover,
+article.markdown a:not(.header-anchor):focus,
+article.markdown a:not(.header-anchor):active {
+    color: var(--link-hover-color);
+}
+
+article.markdown a.header-anchor {
+    margin-right: .5em;
+}
+
+article.markdown table {
+    color: var(--color);
+    width: 100%;
+    border-spacing: 0;
+    border-collapse: collapse;
+}
+
+/* table */
+article.markdown table tbody > tr:nth-child(odd) > td,
+article.markdown table tbody > tr:nth-child(odd) > th {
+    background-color: var(--md-table-bg--color);
+}
+article.markdown table > thead > tr > th,
+article.markdown table > tbody > tr > th,
+article.markdown table > tfoot > tr > th,
+article.markdown table > thead > tr > td,
+article.markdown table > tbody > tr > td,
+article.markdown table > tfoot > tr > td {
+    padding: .5em;
+    line-height: 1.2;
+    vertical-align: top;
+    border-top: 1px solid var(--md-box-border--color);
+}
+/* images */
+article.markdown img {
+    /* we don't need fullfill */
+    /* width: 100%; */
+    display: block;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+/* hr */
+article.markdown hr {
+    margin: 1em 0;
+    border: none;
+    border-top: 1px solid var(--color-secondary);
+    opacity: .45;
+}
+
+.hljs {
+    display: block;
+    overflow-x: auto;
+    padding: 0.5em;
+}
+/* Code (inline and block) */
+
+/* Inline and block code styles */
+code,
+kbd,
+pre,
+samp {
+  font-family: Monoco, Consolas, monospace;
+}
+
+/* Inline code */
+code {
+  padding: .15em .3em;
+  font-size: 90%;
+  border-radius: .2em;
+  color: var(--incode-color);
+  background-color: var(--incode-bg);
+}
+
+/* User input typically entered via keyboard */
+kbd {
+  padding: .15em .3em;
+  font-size: 90%;
+  /* box-shadow: inset 0 -1px 0 rgba(0,0,0,.25); */
+}
+
+kbd kbd {
+    padding: 0;
+    font-size: 100%;
+    box-shadow: none; 
+}
+
+ /* Blocks of code */
+pre {
+  display: block;
+  word-break: break-all;
+  word-wrap: break-word;
+  display: block;
+  padding: .65em;
+  margin: 0 0 .65em;
+  color: var(--text-color);
+  word-break: break-all;
+  word-wrap: break-word;
+  background-color: var(--md-block-bg--color);
+  border: 1px solid var(--md-box-border--color);
+  border-radius: .3em;
+}
+
+/* Account for some code outputs that place code tags in pre tags */
+pre code {
+    padding: 0;
+    font-size: inherit;
+    color: inherit;
+    white-space: pre-wrap;
+    background-color: transparent;
+    border-radius: 0;
+}
+blockquote {
+    padding: .45em 1.25em;
+    margin: 0 0 1.25em;
+    border-left: .35em solid #eee;
+}

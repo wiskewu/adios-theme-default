@@ -1,0 +1,53 @@
+/* ===== articles ====== */
+.app-body-articles {
+    
+}
+.app-body-articles > div {
+    padding: 1em;
+}
+.app-body-articles > div .article-item {
+    
+}
+.article-item > a {
+    text-decoration: none;
+}
+.article-item > a:hover {
+    color: var(--color);
+}
+
+.article-item p.article-item-summary {
+    text-indent: 1em;
+    margin-bottom: 1em;
+}
+.article-item p.article-item-summary:empty {
+    display: none;
+}
+
+.article-item ul.article-item-tags {
+    justify-items: center;
+    margin: .5em 0;
+}
+.article-item ul.article-item-tags li {
+    margin-right: 1em;
+    font-size: 85%;
+    opacity: .85;
+    text-align: center;
+}
+
+.article-item ul.article-item-categories {
+
+}
+.article-item ul.article-item-categories li {
+    margin-right: 1em;
+    opacity: .85;
+}
+
+.article-item ul.article-item-categories li a::before {
+    content: '#';
+}
+
+.article-item div.article-item-date {
+    text-align: right;
+    font-size: 85%;
+    opacity: 0.65;
+}

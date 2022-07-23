@@ -1,0 +1,22 @@
+//- - console.log(pagination);
+style.
+    .app-body-paginaion > div {
+        padding: 1em;
+    }
+    .app-body-paginaion div.pagination-btn-prev {
+        text-align: left;
+    }
+    .app-body-paginaion div.pagination-btn-next {
+        text-align: right;
+    }
+
+if pagination
+    .app-body-paginaion.pure-g
+        div.pure-u-1
+            .pure-g 
+                if pagination.hasPrev
+                    div(class=`pagination-btn-prev pure-u-1-${pagination.hasNext ? 2 : 1}`)
+                        a(href=pagination.prevPageUrl,title=pagination.pageNum - 1) <- 上一页
+                if pagination.hasNext
+                    div(class=`pagination-btn-next pure-u-1-${pagination.hasPrev ? 2 : 1}`)
+                        a(href=pagination.nextPageUrl,title=title=pagination.pageNum + 1) 下一页 ->

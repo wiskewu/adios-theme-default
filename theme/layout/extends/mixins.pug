@@ -1,0 +1,35 @@
+//- mixins (可被继承)
+//-
+    使用一个svg图标（默认生成一个16x16的小图标）
+    id: 带#的symbolId，如"#sun"
+    symbolWidth/symbolHeight: 不带单位的字符串
+    style: svg额外样式，可以是字符串或对象
+    cls: svg额外样式名
+mixin icon(id, symbolWidth="16", symbolHeight="16", style="", cls="icon")
+    svg(class=["icon",cls],aria-hidden="true", style=style)
+        use(xlink:href=id, x="0", y="0", width=symbolWidth, height=symbolHeight)
+
+//- 
+    渲染一个博文项
+mixin renderArticleItem(post)
+    div.pure-g.article-item
+        a.pure-u-1(href=post.url)
+            div.pure-g
+                div.pure-u-1
+                    h3.article-item-title #{post.title}
+                p.pure-u-1.article-item-summary #{post.summary}
+        div.pure-u-1
+            ul.pure-g.article-item-tags
+                each tag in post.tags
+                    li: a(href=tag.url) #{tag.name}
+        div.pure-u-1
+            div.pure-g
+                div.pure-u-1.pure-u-md-1-2
+                    ul.pure-g.article-item-categories
+                        each category in post.categories
+                            li: a(href=category.url) #{category.name}
+                div.pure-u-1.pure-u-md-1-2.article-item-date #{post.createDate}
+
+
+//- mount point for root app
+block rootpage

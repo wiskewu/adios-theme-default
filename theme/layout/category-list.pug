@@ -1,0 +1,20 @@
+extends ./extends/layout.pug
+
+//- render
+block append head
+    //- import css style
+    style: include ./inlinestyles/post-list.css
+
+block append apphead
+
+block append appbody 
+    main.app-body
+        if pagination && pagination.scopedName
+            h2 分类"#{pagination.scopedName}"下所有文章：
+        div.app-body-articles
+            each post in posts
+                div: +renderArticleItem(post)
+
+        include ./includes/pagination.pug
+
+block append appfoot 

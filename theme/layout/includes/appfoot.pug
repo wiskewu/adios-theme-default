@@ -1,0 +1,12 @@
+-
+ const generatedAt = new Date().toLocaleDateString();
+ const year = new Date().getFullYear();
+ const range = year === 2022 ? year : '2022' + year;
+
+footer.pure-g.app-footer
+    div.pure-u-1
+        div.pure-g
+            div.pure-u-1
+                abbr.share-license(title="This site and all its content are licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.") CC BY-NC 4.0
+                span.copyright &copy; #{siteinfo.maintainer}. #{range}
+            div.pure-u-1.last-update 站点最后更新于: #{generatedAt}

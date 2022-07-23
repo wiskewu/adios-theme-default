@@ -1,0 +1,25 @@
+extends ./extends/layout.pug
+
+//- render
+block append head
+    link(rel="stylesheet", href=utils.resolveRes("statics/css/index.css"))
+    //- import css style
+    style: include ./inlinestyles/post-list.css
+
+block append apphead
+
+block append appbody 
+    main.app-body
+        div.app-body-articles
+            each post in posts
+                div: +renderArticleItem(post)
+
+        include ./includes/pagination.pug
+
+block append appfoot 
+
+
+//- 继承时，block需写在最外面以继承引用的模版
+//- 比如以下代码无效，无法正确继承模版中的apphead块
+//- block appbody
+//-     block append apphead

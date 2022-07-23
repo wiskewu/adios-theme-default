@@ -1,0 +1,15 @@
+extends ./extends/layout.pug
+
+//- render
+block append head
+    include ./includes/highlightcss.pug
+
+block append apphead
+
+block append appbody 
+    main.app-body
+        p this is your custom page.
+        if post
+            article.markdown !{post.html}
+
+block append appfoot 

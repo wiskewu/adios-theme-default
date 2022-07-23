@@ -1,0 +1,26 @@
+{
+  "name": "@wiske/adios-theme-default",
+  "version": "0.0.1",
+  "description": "the default theme used in adios-blog-template",
+  "main": "theme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wiskewu/adios-theme-default.git"
+  },
+  "files": [
+		"theme",
+    "snapshot.png"
+	],
+  "author": "wiskewu <wiskewu@gmail.com> (https://github.com/wiskewu)",
+  "bugs": {
+    "url": "https://github.com/wiskewu/adios-theme-default/issues"
+  },
+  "keywords": [
+    "blog theme",
+    "blog"
+  ],
+  "license": "MIT",
+  "dependencies": {},
+  "devDependencies": {},
+  "homepage": "https://github.com/wiskewu/adios-theme-default#readme"
+}

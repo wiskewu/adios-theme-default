@@ -1,0 +1,23 @@
+.app-body ul.app-tags {
+    margin-top: 2em;
+    margin-bottom: 2em;
+}
+
+.app-body .app-tags li.app-tags-item a {
+    text-decoration: none;
+    display: inline-block;
+    padding: 0.25em 0.5em;
+    line-height: 1.5;
+    border-radius: 0.2em;
+    border-color: var(--color-secondary);
+    border-width: 1px;
+    border-style: solid;
+    cursor: pointer;
+
+    margin-right: 1em;
+    margin-bottom: 1em;
+}
+
+.app-body .app-tags li.app-tags-item a:hover {
+    color: var(--link-color);
+}

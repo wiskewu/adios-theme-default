@@ -1,0 +1,77 @@
+/* ==== header ==== */
+.app-post-header {
+    
+}
+.app-post-header > div {
+    padding-top: 3em;
+}
+
+.app-post-header .post-header-title,
+.app-post-header .post-header-info {
+    text-align: center;
+}
+.app-post-header .post-header-info {
+    font-size: 85%;
+    opacity: .85;
+    text-align: center;
+}
+.app-post-header .post-header-info p {
+    display: inline-block;
+    margin: .1em 0;
+}
+.app-post-header .post-header-info p.post-header-info--created span,
+.app-post-header .post-header-info p.post-header-info--author span {
+    margin-left: .5em;
+    vertical-align: text-bottom;
+}
+.app-post-header .post-header-info .post-header-info--divider {
+    margin: 0 .5em;
+    vertical-align: text-bottom;
+}
+
+/* ==== navigation ==== */
+.app-post-navigation {
+    align-items: center;
+    justify-content: flex-end;
+    margin-top: 1em;
+}
+.app-post-navigation span {
+    margin: 0 .5em;
+    cursor: pointer;
+    width: 24px;
+    height: 24px;
+}
+
+/* ==== article body ==== */
+.app-post-body {
+    margin-top: 2em;
+}
+
+/* ==== article footer ==== */
+.app-post-footer {
+    font-size: 85%;
+    opacity: .85;
+    margin: 2em 0;
+}
+.app-post-footer .app-post-footer--box > div {
+    margin: .15em 0;
+}
+
+.app-post-footer .post-footer-updated span {
+    margin-left: .85em;
+    vertical-align: middle;
+}
+
+.app-post-footer ul.post-footer-tags,
+.app-post-footer ul.post-footer-categories {
+    margin-left: .85em;
+}
+.app-post-footer ul.post-footer-tags li,
+.app-post-footer ul.post-footer-categories li {
+    margin-right: 1em;
+    opacity: 1;
+    vertical-align: middle;
+}
+.app-post-footer ul.post-footer-tags li {
+    font-size: 85%;
+}
