@@ -17,6 +17,9 @@ mixin renderArticleItem(post)
             div.pure-g
                 div.pure-u-1
                     h3.article-item-title #{post.title}
+                        if post.top === true
+                            span.article-item-top(title="置顶"): +icon('#flag')
+
                 p.pure-u-1.article-item-summary #{post.summary || ''}
 
         if post.tags.length

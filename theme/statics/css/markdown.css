@@ -17,6 +17,7 @@ article.markdown ul li,
 article.markdown ol li {
     list-style-type: initial;
     list-style-type: revert;
+    margin: .3em 0;
 }
 
 article.markdown a:not(.header-anchor) {
@@ -26,6 +27,10 @@ article.markdown a:not(.header-anchor):hover,
 article.markdown a:not(.header-anchor):focus,
 article.markdown a:not(.header-anchor):active {
     color: var(--link-hover-color);
+}
+
+article.markdown p {
+    line-height: 1.5;
 }
 
 article.markdown a.header-anchor {

@@ -15,6 +15,11 @@
     color: var(--color);
 }
 
+.article-item span.article-item-top {
+    margin-left: 1em;
+    vertical-align: top;
+}
+
 .article-item p.article-item-summary {
     text-indent: 1em;
     margin-bottom: 1em;
