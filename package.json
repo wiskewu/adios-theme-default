@@ -1,6 +1,6 @@
 {
   "name": "@wiske/adios-theme-default",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "the default theme used in adios-blog-template",
   "main": "theme/index.js",
   "repository": {
