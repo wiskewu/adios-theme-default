@@ -14,6 +14,10 @@
     --link-color: #e25e6a;
     --link-hover-color: #41b990;
     --nav-active-color: #333;
+
+    /* toc */
+    --toc-bg-color: #d8d8d8;
+
     /* for markdown */
     /* 行内code样式 */
     --incode-bg: rgba(255,229,100,0.2);
@@ -38,6 +42,9 @@
     --link-color: #e25e6a;
     --link-hover-color: #41b990;
     --nav-active-color: #fff;
+
+    /* toc */
+    --toc-bg-color: #313032;
 
     /* for markdown */
     /* inline code */
